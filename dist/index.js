@@ -94,7 +94,7 @@ async function run() {
     const migrations = core.getInput('MIGRATIONS', baseInputOptions);
 
     await core.group("Installing setuptools", async () => {
-      await exec.exec('sudo -H pip3 install setuptools --ignore-installed')
+      await exec.exec('sudo -H pip3 install setuptools setuptools-rust --ignore-installed')
     });
 
     await core.group("Installing gigalixir", async () => {
