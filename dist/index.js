@@ -94,7 +94,7 @@ async function run() {
     const migrations = core.getInput('MIGRATIONS', baseInputOptions);
 
     await core.group("Python environment", async () => {
-      await exec.exec('sudo -H python -m pip install --upgrade pip setuptools wheel')
+      await exec.exec('sudo -H python -m pip3 install --upgrade pip3 setuptools wheel')
     });
 
     await core.group("Installing gigalixir", async () => {
