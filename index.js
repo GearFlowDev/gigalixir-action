@@ -87,11 +87,11 @@ async function run() {
     const migrations = core.getInput('MIGRATIONS', baseInputOptions);
 
     await core.group("Python environment", async () => {
-      await exec.exec('sudo -H python -m pip3 install --upgrade pip3 setuptools wheel')
+      await exec.exec('python -m pip install --upgrade pip setuptools wheel')
     });
 
     await core.group("Installing gigalixir", async () => {
-      await exec.exec('sudo -H pip3 install gigalixir')
+      await exec.exec('pip3 install gigalixir')
     });
 
     await core.group("Logging in to gigalixir", async () => {
