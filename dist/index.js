@@ -94,15 +94,11 @@ async function run() {
     const migrations = core.getInput('MIGRATIONS', baseInputOptions);
 
     await core.group("Installing setuptools", async () => {
-      await exec.exec('sudo -H pip3 install setuptools --ignore-installed six')
-    });
-
-    await core.group("Updating pip", async () => {
-      await exec.exec('sudo -H python -m pip install -U pip')
+      await exec.exec('sudo -H pip3 install setuptools --ignore-installed')
     });
 
     await core.group("Installing gigalixir", async () => {
-      await exec.exec('sudo -H pip3 install gigalixir --ignore-installed six')
+      await exec.exec('sudo -H pip3 install gigalixir --ignore-installed')
     });
 
     await core.group("Logging in to gigalixir", async () => {
