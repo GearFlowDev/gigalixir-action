@@ -86,12 +86,8 @@ async function run() {
     const gigalixirApp = core.getInput('GIGALIXIR_APP', baseInputOptions);
     const migrations = core.getInput('MIGRATIONS', baseInputOptions);
 
-    await core.group("Installing setuptools, etc.", async () => {
-      await exec.exec('sudo -H pip3 install setuptools wheel setuptools-rust --ignore-installed')
-    });
-
     await core.group("Installing gigalixir", async () => {
-      await exec.exec('sudo -H pip3 install gigalixir --ignore-installed')
+      await exec.exec('sudo -H pip3 install gigalixir')
     });
 
     await core.group("Logging in to gigalixir", async () => {
