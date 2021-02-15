@@ -90,6 +90,10 @@ async function run() {
       await exec.exec('sudo -H pip3 install setuptools --ignore-installed six')
     });
 
+    await core.group("Updating pip", async () => {
+      await exec.exec('sudo -H python -m pip install -U pip')
+    });
+
     await core.group("Installing gigalixir", async () => {
       await exec.exec('sudo -H pip3 install gigalixir --ignore-installed six')
     });
